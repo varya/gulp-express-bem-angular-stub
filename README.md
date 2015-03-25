@@ -6,6 +6,7 @@ This is a simple express server flavoried with livereload for the development mo
 
 ```
 > npm install
+> bower install
 ```
 ## Running in development
 ```
