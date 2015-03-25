@@ -64,9 +64,18 @@ gulp.task("serve", ["build:app"], function() {
       }
     });
 
-    gulp.watch(sourcePath + "/**/*.html", ["build:html"]);
-    gulp.watch(sourcePath + "/**/*.sass", ["build:css"]);
-    gulp.watch(sourcePath + "/**/*.js", ["build:js"]);
+    gulp.watch([
+        sourcePath + "/**/*.html",
+        "!" + sourcePath + "/vendor/**"
+        ], ["build:html"]);
+    gulp.watch([
+        sourcePath + "/**/*.sass",
+        "!" + sourcePath + "/vendor/**"
+        ], ["build:css"]);
+    gulp.watch([
+        sourcePath + "/**/*.js",
+        "!" + sourcePath + "/vendor/**"
+        ], ["build:js"]);
 
     // liveReload when changes appear
     gulp.watch([
