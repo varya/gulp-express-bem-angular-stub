@@ -1,6 +1,7 @@
-# Simple project stub with express server and livereload
+# Project stub with Angular, SASS, BEM CSS and BEM file model
 
-This is a simple express server flavoried with livereload for the development mode.
+This is a stub project on Angular+SASS. Uses BEM CSS approach and BEM file model. Express server flavoried with
+livereload is taken from [gulp-express-stub](https://github.com/varya/gulp-express-stub).
 
 ## Installation
 
@@ -13,7 +14,7 @@ This is a simple express server flavoried with livereload for the development mo
 > gulp
 ```
 This provides a development server.
-CSS, JavaScript and HTML files are watched in `src` folder and the website is reloaded in case of changes.
+SASS, JavaScript and HTML files are watched in `src` folder and the website is reloaded in case of changes.
 
 ## Running app in production
 ```
