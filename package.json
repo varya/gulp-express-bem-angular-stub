@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "0.0.0",
+  "description": "Project stub for live-reloaded express server'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Varya Stepanova",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-express": "0.1.10",
+    "gulp-replace": "^0.5.3",
+    "gulp-util": "^3.0.3"
+  },
+  "dependencies": {
+    "connect-livereload": "^0.5.3",
+    "express": "^4.11.2"
+  }
+}
