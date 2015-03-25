@@ -7,6 +7,10 @@ var server = require("gulp-express");
 var replace = require("gulp-replace");
 var util = require("gulp-util");
 
+var sass = require("gulp-sass");
+var ngAnnotate = require('gulp-ng-annotate');
+var borschik = require("gulp-borschik");
+
 var options = require("./config");
 
 // Shortcats
@@ -24,14 +28,17 @@ gulp.task("build:app", [
     ]);
 
 gulp.task("build:css", function() {
-    return gulp.src(sourcePath + "/*.css")
-        // Add your building for CSS here
+    return gulp.src(sourcePath + "/*.sass")
+        .pipe(sass(options.sass))
         .pipe(gulp.dest(outputPath));
 });
 
 gulp.task("build:js", function() {
     return gulp.src(sourcePath + "/*.js")
-        // Add your building for JS here
+        .pipe(ngAnnotate())
+        .pipe(borschik({
+            minimize: false
+        }))
         .pipe(gulp.dest(outputPath));
 });
 
@@ -58,11 +65,14 @@ gulp.task("serve", ["build:app"], function() {
     });
 
     gulp.watch(sourcePath + "/**/*.html", ["build:html"]);
-    gulp.watch(sourcePath + "/**/*.css", ["build:css"]);
+    gulp.watch(sourcePath + "/**/*.sass", ["build:css"]);
     gulp.watch(sourcePath + "/**/*.js", ["build:js"]);
 
     // liveReload when changes appear
-    gulp.watch(outputPath + '/**', server.notify);
+    gulp.watch([
+        outputPath + "/**",
+        "!" + outputPath + "/vendor/**"
+      ], server.notify);
 });
 
 gulp.task("default", ["serve"]);

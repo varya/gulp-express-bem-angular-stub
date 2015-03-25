@@ -1,0 +1,22 @@
+.menu
+
+  margin: 10px;
+  font-size: 18px;
+
+  &__item
+
+    padding: 10px;
+    display: block;
+
+    &--active
+      margin-left: -20px;
+
+      &:before
+        content: '—';
+        width: 20px;
+
+      & .menu__link
+        font-weight: bold
+
+  &__link
+    color: $white

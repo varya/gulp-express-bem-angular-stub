@@ -10,7 +10,13 @@
 
         // Build options
         sourcePath: "./src",
-        outputPath: "./output"
+        outputPath: "./output",
+
+        // SASS options
+        sass: {
+            sourcemap: true,
+            style: "expanded"
+        }
     }
 
     module.exports = options;

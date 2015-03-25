@@ -1,0 +1,15 @@
+.layout
+
+    display: flex
+    position: relative
+
+    &__side
+
+      max-width: $layout__side--max
+      width: 25%
+      min-width: $layout__side--min
+
+    &__main
+
+      width: 100%
+      min-width: $full-width - $layout__side--min

@@ -1,0 +1,12 @@
+<menu ng-controller="MenuCtrl as menu" class="menu">
+    <item ng-repeat="item in items"
+          class="menu__item"
+          ng-class="isActive(item.pageId) && 'menu__item--active'"
+          >
+          <a
+            class="menu__link"
+            ng-click="navigate(item.pageUrl)">
+            {{ item.pageName }}
+          </a>
+    </item>
+</menu>
